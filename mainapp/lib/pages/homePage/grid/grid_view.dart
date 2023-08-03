@@ -31,68 +31,73 @@ class _gridViewState extends State<gridView> {
           mainAxisSpacing: 8.0,
         ),
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: ColorIs.whiteGray,
-            ),
-            width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const CircleAvatar(
-                        backgroundColor: ColorIs.white,
-                        child: Icon(
-                          Icons.tv_rounded,
-                          color: ColorIs.blue,
+          InkWell(
+            onTap: (){
+              
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.0),
+                color: ColorIs.whiteGray,
+              ),
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const CircleAvatar(
+                          backgroundColor: ColorIs.white,
+                          child: Icon(
+                            Icons.tv_rounded,
+                            color: ColorIs.blue,
+                          ),
                         ),
+                        FlutterSwitch(
+                          value: smartTv,
+                          height: 20.h,
+                          width: 40.w,
+                          toggleSize: 15.0,
+                          activeColor: ColorIs.halfGreen,
+                          inactiveColor: ColorIs.gray,
+                          activeToggleColor: ColorIs.blue,
+                          inactiveToggleColor: ColorIs.white,
+                          onToggle: (val) {
+                            setState(() {
+                              smartTv = val;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, top: 15.0),
+                      child: Text(
+                        "Smart Tv",
+                        style: GoogleFonts.inter(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorIs.blue),
                       ),
-                      FlutterSwitch(
-                        value: smartTv,
-                        height: 20.h,
-                        width: 40.w,
-                        toggleSize: 15.0,
-                        activeColor: ColorIs.halfGreen,
-                        inactiveColor: ColorIs.gray,
-                        activeToggleColor: ColorIs.blue,
-                        inactiveToggleColor: ColorIs.white,
-                        onToggle: (val) {
-                          setState(() {
-                            smartTv = val;
-                          });
-                        },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 8.0,
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, top: 15.0),
-                    child: Text(
-                      "Smart Tv",
-                      style: GoogleFonts.inter(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorIs.blue),
+                      child: Text(
+                        "1 Device",
+                        style: GoogleFonts.inter(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorIs.blue),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8.0,
-                    ),
-                    child: Text(
-                      "1 Device",
-                      style: GoogleFonts.inter(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorIs.blue),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -114,7 +119,7 @@ class _gridViewState extends State<gridView> {
                       const CircleAvatar(
                         backgroundColor: ColorIs.white,
                         child: Icon(
-                          Icons.air_rounded,
+                          Icons.waves_rounded,
                           color: ColorIs.blue,
                         ),
                       ),
@@ -179,7 +184,7 @@ class _gridViewState extends State<gridView> {
                       const CircleAvatar(
                         backgroundColor: ColorIs.white,
                         child: Icon(
-                          Icons.waves,
+                          Icons.air_rounded,
                           color: ColorIs.blue,
                         ),
                       ),
